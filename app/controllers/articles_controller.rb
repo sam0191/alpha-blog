@@ -4,10 +4,36 @@ class ArticlesController < ActionController::Base
 		@article = Article.new
 	end
 
-	def create
+  def create
 		@article = Article.new(article_params)
-		@article.save
-		redirect_to article_path(@article)
+    if @article.save
+      flash[:success] = "Article was successfully created"
+      redirect_to article_path(@article)
+    else
+      render 'new'
+    end
+  end
+
+	def show
+		@article = Article.find( params[:id] )
+	end
+
+	def index
+		@articles = Article.all
+	end
+
+	def edit
+		@article = Article.find( params[:id] )
+	end
+
+	def update
+		@article = Article.find( params[:id] )
+		if @article.update(article_params)
+      flash[:success] = "Article was successfully updated"
+      redirect_to article_path(@article)
+		else
+			render 'edit'
+		end
 	end
 
 	private
