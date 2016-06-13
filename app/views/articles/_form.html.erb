@@ -7,20 +7,24 @@
 	</ul>
 <% end %>
 
+
 <%= form_for @article do |f| %>
-	<p>
+	<div class="form-group">
 		<%= f.label :title %><br/>
-		<%= f.text_field :title %>
-	</p>
-	<p>
+		<%= f.text_field :title, class: 'form-control' %>
+	</div>
+	<div class="form-group">
 		<%= f.label :description %><br/>
-		<%= f.text_area :description %>
-	</p>
-	<p>
-		<%= f.submit "Create" %>
-	</p>
+		<%= f.text_area :description, rows: 10, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.submit class: 'btn btn-primary'  %>
+	</div>
 
 
 <% end %>
 
-<%= link_to "Back to article listing", articles_path %>
+<div class="text-center">
+	
+	[ <%= link_to "Cancel request & back to article listing", articles_path %> ] 
+</div>
