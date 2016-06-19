@@ -2,6 +2,14 @@
 	<div class="col-md-8 col-md-offset-2">
 		<h2 class="text-center"> Title: <%= @article.title %> </h2>
 		<div class="well">
+			<ul class="text-center list-unstyled">
+				<li>Created by:</li>
+				<li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+				<li class="font-sz"><%= link_to @article.user.username, user_path(@article.user) %></li>
+				<li><small>
+				<%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
+				</small></li>
+			</ul>
 			<h4 class="text-center description"><strong>Description:</strong></h4>
 			<hr> 			
 			<%= simple_format(@article.description) %>
