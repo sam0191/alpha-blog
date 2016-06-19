@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+	def index
+		@user = User.all
+
+	end
+
 	def new
 		@user = User.new
 	end
@@ -26,6 +31,10 @@ class UsersController < ApplicationController
 			render 'edit'
 		end
 
+	end
+
+	def show
+		@user = User.find(params[:id])
 	end
 
 	private

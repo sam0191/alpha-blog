@@ -1,0 +1,7 @@
+<% @user.each do |user| %>
+	<%= user.username %><br/>
+		<% user.articles.each do |f| %>
+			<%= f.title %><br/>
+			<% f.description %><br/>
+		<% end %>
+<% end %>
