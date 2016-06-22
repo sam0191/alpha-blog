@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :articles
+	has_many :articles, dependent: :destroy
 	#before the user hit the database it will take the email value and  will turn it to lower case by using downcase method and then saving to the database
 	before_save { self.email = email.downcase }
 	validates :username, presence: true, 
