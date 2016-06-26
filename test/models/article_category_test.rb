@@ -7,22 +7,15 @@ class ArticleCategoryTest < ActiveSupport::TestCase
 		@article = Article.new(title: "sdsadsadsad", description: "asfsafsd gasdsdg", user: User.last)
 	end
 	test "Category articles should be valid" do 
-		assert @articlecategory.valid
-?	end
+		assert @articlecategory.valid?
+	end
 
 	test "ArticleCategory belongs to article" do
-		@articlecategory.article
+		assert @articlecategory.article.nil?
 	end
 
-	test "Article have many categories" do
-		assert @article.categories
-
-	end
-
-
-	test "category have many articles" do
-		assert @category.articles
-
+	test "ArticleCategory belongs to Category" do
+		assert @articlecategory.category.nil?
 	end
 
 end

@@ -30,4 +30,8 @@ class CategoryTest < ActiveSupport::TestCase
 		@category.name = "aa"
 		assert_not @category.valid?
 	end
-end
+
+	test "category has many article" do
+		assert @category.articles
+	end
+end 
