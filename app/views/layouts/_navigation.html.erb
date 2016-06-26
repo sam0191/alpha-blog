@@ -39,7 +39,7 @@
             <% end %>
             <% if logged_in? && current_user.admin? %>
               <li role="separator" class="divider"></li>
-              <!-- Another way is this(without the if statment in the begining) li embedded ruby link_to New Category, new_category_path i f logged_in? a n d current_user.admin? -->
+              <!-- Another way is this(without the if statment in the begining) li embedded ruby l i n k_to New Category, new_category_path i f logged_in? a n d current_user.admin? -->
               <li><%= link_to "New Category", new_category_path %>
             <% end %>
           </ul>
