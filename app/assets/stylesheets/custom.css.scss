@@ -88,3 +88,14 @@ footer ul li {
 	border-top: 1px solid #eaeaea;
 	margin-top: 10px;	
 }
+
+.badge {
+	background-color: #CEF6F5;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.input_checkbox input {
+	width: auto !important; /* this is not styling..this is sryling for the input checkbox because sometimes in pc's the input checkbox doesnt style correctly so it need this */
+}
